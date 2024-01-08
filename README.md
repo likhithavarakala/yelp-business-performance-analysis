@@ -54,22 +54,6 @@ In the project, several tools and techniques were used to analyze the Yelp datas
 6. **Aggregation and Statistical Functions:** Used for summarizing and analyzing the Yelp dataset.
 7. **Clustering Algorithm (K-Means):** Applied for identifying separate clusters in the dataset based on ratings and reviews.
 
-## Installations
-
-Here is a step-by-step guide for installing PySpark and Jupyter on a computer that already has Java Development Kit and Spark:
-
-1. **Install PySpark:**
-   - Open a terminal or command prompt and install PySpark using `pip install pyspark`.
-
-2. **Install Jupyter Notebook:**
-   - Install Jupyter Notebook using `pip install jupyter`.
-
-3. **Launch Jupyter Notebook:**
-   - Open a terminal or command prompt, navigate to the directory where you want to start Jupyter Notebook, and run `jupyter notebook`.
-
-4. **Create a New Notebook:**
-   - In Jupyter Notebook, click on "New" and select "Python 3" to create a new notebook.
-
 ## Analysis
 
 ### Data Loading and Preprocessing
@@ -78,4 +62,75 @@ The Yelp dataset is loaded into PySpark, and various libraries are imported. The
 
 ### Exploratory Data Analysis (EDA)
 
-EDA techniques are applied to gain initial insights into the dataset. This involves examining summary statistics, visualizing distributions
+he Yelp dataset is loaded into PySpark, and various libraries are imported. The Spark Session is initialized, and data preprocessing techniques are applied.
+
+### Exploratory Data Analysis (EDA)
+
+EDA techniques are applied to gain initial insights into the dataset. This involves examining summary statistics, visualizing distributions of ratings and review counts, and exploring categories.
+
+1. **Average Rating by Organization:**
+   - The dataset is grouped by organization, and the average rating for each organization is calculated.
+
+2. **Top 10 Most Reviewed Businesses:**
+   - The dataset is grouped by organization and sorted in decreasing order of the number of reviews received.
+
+3. **Popular Categories by Review Count:**
+   - The dataset is analyzed to determine the most popular categories based on the number of reviews received.
+
+4. **Average Rating for Each Category:**
+   - The dataset is analyzed to determine the average rating for each category.
+
+5. **Distribution of Yelp Businesses by Category:**
+   - The analysis involves aggregating the counts of businesses by category and sorting the results.
+
+6. **Distribution of Ratings:**
+   - A subset of the dataset consisting of the 'rating' column is used to create a histogram.
+
+7. **Top 20 Organizations Count by City:**
+   - The count of organizations based on the city is calculated, and a bar graph is generated.
+
+### Clustering Analysis
+
+The k-means algorithm is utilized to conduct clustering analysis based on the rating and number of reviews.
+
+1. **Cluster Analysis: Rating vs. Number of Reviews:**
+   - A scatter plot is generated to visually represent the distribution of data points across different clusters.
+
+   - Cluster 0 Center: [Rating: 2.72, Number of Reviews: 26.49]
+   - Cluster 1 Center: [Rating: 4.06, Number of Reviews: 2314.81]
+   - Cluster 2 Center: [Rating: 3.98, Number of Reviews: 523.50]
+
+## What Worked
+
+- The PySpark framework provided efficient and scalable processing capabilities for handling the large-scale Yelp dataset.
+- EDA techniques allowed for a comprehensive exploration of the dataset, providing initial insights into the data's characteristics.
+- Analytical tasks, such as calculating average ratings and analyzing category distributions, were successfully executed.
+
+## What Did Not Work and Why Not
+
+- Data quality issues: Incomplete or inaccurate data in the Yelp dataset could impact the reliability of the analysis results.
+- Complexity of relationships: Unraveling complex relationships between variables influencing business success may require more advanced analytical techniques or additional data sources.
+- Limitations in external factors: The analysis may not fully account for external factors such as economic conditions or industry dynamics, which can influence business success.
+
+## Conclusion
+
+Throughout the project, the experience of working with PySpark for analyzing the Yelp dataset was insightful and valuable. The findings and insights derived from the analysis provided meaningful information about the organizations, ratings, reviews, categories, cities, and states in the dataset.
+
+### Key Conclusions:
+
+1. **Data Analysis and Insights:**
+   - The analysis revealed the top-rated organizations, allowing for recognition of businesses that consistently received positive reviews.
+   - Understanding the distribution of ratings and reviews provided insights into customer sentiments and satisfaction levels.
+   - Exploring the most common categories helped identify popular business types and industry trends.
+
+2. **Limitations and Future Considerations:**
+   - The analysis focused on a specific dataset, and the findings are specific to the Yelp dataset used.
+   - Further analysis could include sentiment analysis of reviews using natural language processing techniques to extract more detailed insights.
+   - Incorporating external data sources, such as demographic data or social media trends, could enrich the analysis and provide a broader context.
+
+3. **Technical Challenges and Learnings:**
+   - Working with PySpark and distributed computing frameworks presented challenges related to debugging, resource management, and performance optimization.
+   - The project provided an opportunity to learn and understand the complexities of distributed data processing and how to address them effectively.
+
+Working on this project reinforced the importance of data preprocessing, exploratory data analysis, and visualization techniques in deriving meaningful insights from large datasets. PySpark proved to be a powerful tool for scalable data processing and analysis, offering extensive functionality and integration with Spark SQL. It was a valuable experience to work with big data analytics tools and techniques and witness the potential they hold in extracting valuable information from vast datasets.
+
